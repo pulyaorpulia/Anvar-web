@@ -1,0 +1,28 @@
+{% load static %}
+<header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+
+        <a href="{% url 'home' %}" class="navbar__logo">
+            {% if settings.logo %}
+            <img src="{{ settings.logo.url }}" alt="Anvar Studio" class="navbar__logo-img">
+            {% endif %}
+            <span class="navbar__logo-text">
+                Anvar<span class="navbar__logo-dot"> Zaripov</span>
+            </span>
+        </a>
+
+        <nav class="navbar__nav" id="navMenu">
+            <a href="{% url 'home' %}" class="navbar__link {% if request.resolver_match.url_name == 'home' %}navbar__link--active{% endif %}">Bosh sahifa</a>
+            <a href="{% url 'project_list' %}" class="navbar__link {% if request.resolver_match.url_name == 'project_list' %}navbar__link--active{% endif %}">Loyihalar</a>
+            <a href="{% url 'about' %}" class="navbar__link {% if request.resolver_match.url_name == 'about' %}navbar__link--active{% endif %}">Haqimda</a>
+            <a href="{% url 'contact' %}" class="navbar__link btn btn--gold">Bog'lanish</a>
+        </nav>
+
+        <button class="navbar__burger" id="burgerBtn" aria-label="Menyu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+</header>

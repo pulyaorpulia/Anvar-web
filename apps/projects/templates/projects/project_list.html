@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Loyihalar — Anvar Studio{% endblock %}
+{% block meta_description %}Anvar Studio tomonidan yaratilgan logotip, brending, packaging va prezentatsiya loyihalari.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/project_list.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <span class="label">Portfolio</span>
+        <h1 class="page-hero__title">Bizning<br><em>ishlarimiz.</em></h1>
+    </div>
+</section>
+
+<!-- FILTER -->
+<section class="filter">
+    <div class="container">
+        <div class="filter__inner">
+            <a href="{% url 'project_list' %}"
+               class="filter__btn {% if not current_category %}filter__btn--active{% endif %}">
+                Barchasi
+            </a>
+            {% for value, display in categories %}
+            <a href="?category={{ value }}"
+               class="filter__btn {% if current_category == value %}filter__btn--active{% endif %}">
+                {{ display }}
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS GRID -->
+<section class="projects">
+    <div class="container">
+        <div class="projects__grid">
+            {% for project in projects %}
+            <a href="{% url 'project_detail' project.slug %}" class="project-card">
+                <div class="project-card__img-wrap">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}">
+                    {% else %}
+                    <div class="project-card__img-placeholder"></div>
+                    {% endif %}
+                    <div class="project-card__overlay">
+                        <span class="project-card__overlay-text">Ko'rish →</span>
+                    </div>
+                    <span class="project-card__category">{{ project.get_category_display }}</span>
+                </div>
+                <div class="project-card__info">
+                    <h3 class="project-card__title">{{ project.title }}</h3>
+                    <p class="project-card__desc">{{ project.short_description }}</p>
+                </div>
+            </a>
+            {% empty %}
+            <div class="projects__empty">
+                <p>Hozircha loyihalar yo'q. Tez orada qo'shiladi.</p>
+                <a href="{% url 'contact' %}" class="btn btn--gold" style="margin-top: 1.5rem;">Loyiha buyurtma qilish</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <div class="cta__inner">
+            <span class="label">Navbat sizda</span>
+            <h2 class="cta__title">Keyingi loyiha<br><em>sizniki bo'lsin.</em></h2>
+            <div class="cta__actions">
+                <a href="{% url 'contact' %}" class="btn btn--filled">Murojaat qilish</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

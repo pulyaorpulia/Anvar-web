@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: anvar-web
+    runtime: python
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate
+    startCommand: gunicorn config.wsgi:application
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: False
+      - key: ALLOWED_HOSTS
+        value: .onrender.com
+      - key: DB_NAME
+        fromDatabase:
+          name: anvar-web-db
+          property: database
+      - key: DB_USER
+        fromDatabase:
+          name: anvar-web-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: anvar-web-db
+          property: password
+      - key: DB_HOST
+        fromDatabase:
+          name: anvar-web-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: anvar-web-db
+          property: port
+
+databases:
+  - name: anvar-web-db
+    plan: free

@@ -1,0 +1,75 @@
+{% load static %}
+<footer class="footer">
+    <div class="container footer__inner">
+
+        <div class="footer__top">
+            <div class="footer__brand">
+                <a href="{% url 'home' %}" class="navbar__logo">
+                    Anick<span class="navbar__logo-dot">Pulik</span>
+                </a>
+                <p class="footer__tagline">G'oyadan brendgacha.</p>
+            </div>
+
+            <div class="footer__links">
+                <span class="label">Sahifalar</span>
+                <ul>
+                    <li><a href="{% url 'home' %}">Bosh sahifa</a></li>
+                    <li><a href="{% url 'project_list' %}">Loyihalar</a></li>
+                    <li><a href="{% url 'about' %}">Haqimda</a></li>
+                    <li><a href="{% url 'contact' %}">Bog'lanish</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__links">
+                <span class="label">Xizmatlar</span>
+                <ul>
+                    <li>Logotip dizayni</li>
+                    <li>Brending</li>
+                    <li>Packaging</li>
+                    <li>Prezentatsiya</li>
+                </ul>
+            </div>
+
+            <div class="footer__contact">
+                <span class="label">Aloqa</span>
+                {% if settings %}
+                <ul>
+                    {% if settings.phone %}
+                    <li>
+                        <a href="tel:{{ settings.phone }}">{{ settings.phone }}</a>
+                    </li>
+                    {% endif %}
+                    {% if settings.phone2 %}
+                    <li>
+                        <a href="tel:{{ settings.phone2 }}">{{ settings.phone2 }}</a>
+                    </li>
+                    {% endif %}
+                    {% if settings.email %}
+                    <li>
+                        <a href="mailto:{{ settings.email }}">{{ settings.email }}</a>
+                    </li>
+                    {% endif %}
+                    {% if settings.address %}
+                    <li>{{ settings.address }}</li>
+                    {% endif %}
+                </ul>
+                {% endif %}
+
+                <div class="footer__socials">
+                    {% if settings.instagram %}
+                    <a href="{{ settings.instagram }}" target="_blank" rel="noopener" class="footer__social-link">Inst</a>
+                    {% endif %}
+                    {% if settings.telegram %}
+                    <a href="{{ settings.telegram }}" target="_blank" rel="noopener" class="footer__social-link">Tg</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; {% now "Y" %} Pulya_or_Pulia. Barcha huquqlar himoyalangan.</p>
+            <p class="footer__credit">Dizayn & Ishlab chiqish — <span style="color: var(--gold);">Anvar Studio</span></p>
+        </div>
+
+    </div>
+</footer>

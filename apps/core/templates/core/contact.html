@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Bog'lanish — Anvar Studio{% endblock %}
+{% block meta_description %}Anvar Studio bilan bog'laning. Loyiha, narx va hamkorlik bo'yicha murojaat qiling.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HERO -->
+<section class="page-hero contact-hero">
+    <div class="container">
+        <span class="label">Aloqa</span>
+        <h1 class="page-hero__title">Gaplashaylik.<br><em>Loyiha boshlaylik.</em></h1>
+        <p class="contact-hero__sub">Har qanday savol yoki g'oya bo'lsa — biz shu yerdamiz.</p>
+
+        <!-- QUICK CONTACTS -->
+        <div class="contact-quick">
+            {% if settings.phone %}
+            <a href="tel:{{ settings.phone }}" class="contact-quick__item">
+                <div class="contact-quick__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <div class="contact-quick__text">
+                    <span class="contact-quick__label">Telefon</span>
+                    <span class="contact-quick__val">{{ settings.phone }}</span>
+                </div>
+            </a>
+            {% endif %}
+            {% if settings.email %}
+            <a href="mailto:{{ settings.email }}" class="contact-quick__item">
+                <div class="contact-quick__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+                    </svg>
+                </div>
+                <div class="contact-quick__text">
+                    <span class="contact-quick__label">Email</span>
+                    <span class="contact-quick__val">{{ settings.email }}</span>
+                </div>
+            </a>
+            {% endif %}
+            {% if settings.telegram %}
+            <a href="{{ settings.telegram }}" target="_blank" class="contact-quick__item">
+                <div class="contact-quick__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11.944 0A12 12 0 1 0 24 12 12 12 0 0 0 11.944 0zm5.992 8.17-2.017 9.328c-.144.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.163 14.33l-2.95-.924c-.64-.204-.657-.64.136-.954l11.57-4.461c.537-.194 1.006.131.837.95l-.82.23z"/>
+                    </svg>
+                </div>
+                <div class="contact-quick__text">
+                    <span class="contact-quick__label">Telegram</span>
+                    <span class="contact-quick__val">Yozish →</span>
+                </div>
+            </a>
+            {% endif %}
+            {% if settings.instagram %}
+            <a href="{{ settings.instagram }}" target="_blank" class="contact-quick__item">
+                <div class="contact-quick__icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                    </svg>
+                </div>
+                <div class="contact-quick__text">
+                    <span class="contact-quick__label">Instagram</span>
+                    <span class="contact-quick__val">Kuzatish →</span>
+                </div>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT MAIN -->
+<section class="contact">
+    <div class="container contact__inner">
+
+        <!-- LEFT -->
+        <div class="contact__info">
+
+            {% if settings.address %}
+            <div class="contact__info-block">
+                <div class="contact__info-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="label">Manzil</span>
+                    <p class="contact__value">{{ settings.address }}</p>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if settings.phone %}
+            <div class="contact__info-block">
+                <div class="contact__info-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="label">Telefon</span>
+                    <a href="tel:{{ settings.phone }}" class="contact__value">{{ settings.phone }}</a>
+                    {% if settings.phone2 %}
+                    <a href="tel:{{ settings.phone2 }}" class="contact__value">{{ settings.phone2 }}</a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if settings.map_embed_url %}
+<div class="contact__map">
+    <div class="contact__map-label">
+        <div style="display:flex; align-items:center; gap:8px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+            Bizning manzil
+        </div>
+        {% if settings.address %}
+        <a href="https://yandex.uz/maps/?text={{ settings.address }}" target="_blank">
+            Yandex Maps ↗
+        </a>
+        {% endif %}
+    </div>
+    <iframe
+        src="{{ settings.map_embed_url }}"
+        width="100%"
+        height="360"
+        style="border: none; display: block;"
+        allowfullscreen="true"
+        loading="lazy">
+    </iframe>
+</div>
+
+            {% endif %}
+
+        </div>
+
+        <!-- RIGHT — Forma -->
+        <div class="contact__form-wrap">
+            <span class="label">Xabar yuborish</span>
+            <h2 class="contact__form-title">Murojaat qiling —<br><em>24 soat ichida javob.</em></h2>
+
+            <form class="contact__form" method="POST" action="{% url 'contact' %}#contact-form" novalidate id="contact-form">
+                {% csrf_token %}
+
+                <div class="form__group">
+                    <label class="form__label" for="{{ form.name.id_for_label }}">Ismingiz</label>
+                    {{ form.name }}
+                    {% if form.name.errors %}
+                    <span class="form__error">{{ form.name.errors.0 }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="form__row">
+                    <div class="form__group">
+                        <label class="form__label" for="{{ form.email.id_for_label }}">Email</label>
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                        <span class="form__error">{{ form.email.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                    <div class="form__group">
+                        <label class="form__label" for="{{ form.phone.id_for_label }}">Telefon</label>
+                        {{ form.phone }}
+                        {% if form.phone.errors %}
+                        <span class="form__error">{{ form.phone.errors.0 }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form__group">
+                    <label class="form__label" for="{{ form.message.id_for_label }}">Xabar</label>
+                    {{ form.message }}
+                    {% if form.message.errors %}
+                    <span class="form__error">{{ form.message.errors.0 }}</span>
+                    {% endif %}
+                </div>
+
+                <button type="submit" class="btn btn--filled contact__submit">
+                    Yuborish →
+                </button>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

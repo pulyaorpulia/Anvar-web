@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Haqimda — Anvar Studio{% endblock %}
+{% block meta_description %}Anvar — 5 yillik tajribaga ega grafik dizayner. Jamoa, yutuqlar va bizning hikoyamiz haqida.{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+    <div class="container">
+        <span class="label">Biz haqimizda</span>
+        <h1 class="page-hero__title">Dizayn — bu<br><em>muloqot shakli.</em></h1>
+    </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+    <div class="container story__inner">
+        <div class="story__text">
+            <span class="label">Hikoyamiz</span>
+            <h2 class="story__title">Nima uchun biz?</h2>
+            <p>Har bir brend o'z ovoziga ega. Biz shu ovozni vizual tilda ifodalashga yordam beramiz. Logotipdan tortib to packaging gacha — har bir detal mijozning maqsadiga xizmat qiladi.</p>
+            <p>Biz faqat chiroyli rasmlar chizmaymiz. Biz strategik yondashuv bilan brendingizni quramiz — bozorda ajralib turadigan, esda qoladigan va ishonch uyg'otadigan.</p>
+            <a href="{% url 'contact' %}" class="btn btn--filled" style="margin-top: 2rem; display: inline-block;">Loyiha boshlash</a>
+        </div>
+        <div class="story__visual">
+            <div class="story__img-wrap">
+                {% if settings.about_image %}
+                <img src="{{ settings.about_image.url }}" alt="Anvar Studio">
+                {% else %}
+                <div class="story__img-placeholder"></div>
+                {% endif %}
+            </div>
+            <div class="story__quote">
+                <p>"Dizayn — bu muammo yechish, nafaqat bezash."</p>
+                <span class="label">— Anvar</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+{% if achievements %}
+<section class="about-achievements">
+    <div class="container">
+        <div class="achievements__grid">
+            {% for item in achievements %}
+            <div class="achievement__item">
+                <span class="achievement__icon">{{ item.icon }}</span>
+                <span class="achievement__number">{{ item.number }}</span>
+                <span class="achievement__label">{{ item.label }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+
+<!-- VALUES -->
+<section class="values">
+    <div class="container">
+        <div class="section-header">
+            <span class="label">Bizning yondashuv</span>
+            <h2 class="section-title">Qadriyatlarimiz</h2>
+        </div>
+
+        <div class="values__grid">
+            <div class="values__card">
+                <span class="values__num">01</span>
+                <h3 class="values__title">Strategiya</h3>
+                <p class="values__desc">Har bir loyiha tadqiqotdan boshlanadi. Bozor, raqobat, maqsadli auditoriya — barchasini tahlil qilamiz.</p>
+            </div>
+            <div class="values__card">
+                <span class="values__num">02</span>
+                <h3 class="values__title">Sifat</h3>
+                <p class="values__desc">Pixel darajasidagi aniqlik. Har bir detal muhim — rangdan shriftgacha, formadan mazmungacha.</p>
+            </div>
+            <div class="values__card">
+                <span class="values__num">03</span>
+                <h3 class="values__title">Muddatlar</h3>
+                <p class="values__desc">Kelishilgan muddatda topshiramiz. Har doim. Sababi vaqt — biznes uchun eng qimmat resurs.</p>
+            </div>
+            <div class="values__card">
+                <span class="values__num">04</span>
+                <h3 class="values__title">Hamkorlik</h3>
+                <p class="values__desc">Mijoz bilan birga yaratamiz. Sizning g'oyangiz + bizning tajribamiz = ajoyib natija.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <div class="cta__inner">
+            <span class="label">Tayyor bo'lsangiz</span>
+            <h2 class="cta__title">Birgalikda<br><em>ajoyib narsa yarataylik.</em></h2>
+            <div class="cta__actions">
+                <a href="{% url 'contact' %}" class="btn btn--filled">Murojaat qilish</a>
+                <a href="{% url 'project_list' %}" class="btn">Loyihalarni ko'rish</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

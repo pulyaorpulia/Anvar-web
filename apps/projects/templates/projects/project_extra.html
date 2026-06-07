@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ project.title }} — Batafsil — Anvar Studio{% endblock %}
+{% block meta_description %}{{ project.short_description }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/project_extra.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- PAGE HERO -->
+<section class="detail-hero">
+    <div class="container">
+        <div class="detail-hero__meta">
+            <a href="{% url 'project_detail' project.slug %}" class="detail-hero__back">← Loyihaga qaytish</a>
+            <span class="label">{{ project.get_category_display }}</span>
+        </div>
+        <h1 class="detail-hero__title">{{ project.title }}</h1>
+        <p class="detail-hero__desc">Loyiha jarayoni — bosqichma-bosqich.</p>
+    </div>
+</section>
+
+<!-- FULL GALLERY -->
+{% if project.images.all %}
+<section class="extra-gallery">
+    <div class="container">
+        {% for img in project.images.all %}
+        <div class="extra-gallery__item {% if forloop.counter|divisibleby:3 %}extra-gallery__item--wide{% endif %}">
+            <img src="{{ img.image_gallery.url }}"
+                 alt="{{ project.title }} — {{ forloop.counter }}"
+                 class="gallery-img"
+                 onclick="openLightbox(this.src)">
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <button class="lightbox__close" onclick="closeLightbox()">✕</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+</div>
+
+<!-- DESCRIPTION -->
+<section class="extra-content">
+    <div class="container extra-content__inner">
+        <div class="extra-content__sidebar">
+            <div class="detail-info__block">
+                <span class="label">Loyiha</span>
+                <p class="extra-sidebar__value">{{ project.title }}</p>
+            </div>
+            <div class="detail-info__block">
+                <span class="label">Kategoriya</span>
+                <p class="extra-sidebar__value">{{ project.get_category_display }}</p>
+            </div>
+            <div class="detail-info__block">
+                <span class="label">Sana</span>
+                <p class="extra-sidebar__value">{{ project.created_at|date:"Y, F" }}</p>
+            </div>
+            <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 12px;">
+                <a href="{% url 'contact' %}" class="btn btn--filled">Buyurtma qilish</a>
+                <a href="{% url 'project_list' %}" class="btn">Barcha loyihalar</a>
+            </div>
+        </div>
+
+        <div class="extra-content__text">
+            <span class="label">To'liq tavsif</span>
+            <h2 class="extra-content__title">Loyiha haqida<br><em>batafsil.</em></h2>
+            <div class="extra-content__desc">
+                {{ project.description|linebreaks }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <div class="cta__inner">
+            <span class="label">Siz ham tayyor bo'lsangiz</span>
+            <h2 class="cta__title">Sizning loyihangiz<br><em>navbatda.</em></h2>
+            <div class="cta__actions">
+                <a href="{% url 'contact' %}" class="btn btn--filled">Murojaat qilish</a>
+                <a href="{% url 'project_list' %}" class="btn">Boshqa ishlar</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
