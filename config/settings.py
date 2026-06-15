@@ -173,4 +173,8 @@ AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_CUSTOM_DOMAIN = 'kskhmkqohcmpepkkoqhl.supabase.co/storage/v1/object/public/media'
 
+
+AWS_S3_ADDRESSING_STYLE = 'path'
+
+
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
