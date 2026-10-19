@@ -424,3 +424,13 @@
         grid-template-columns: 1fr;
     }
 }
+
+/* Telefon */
+@media (max-width: 480px) {
+    .detail-content__text .label {
+        margin-bottom: 0.5rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        word-break: break-word;
+    }
+}
