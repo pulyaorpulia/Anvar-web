@@ -178,3 +178,19 @@ AWS_S3_ADDRESSING_STYLE = 'path'
 
 
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/'
+
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {'class': 'logging.StreamHandler'},
+    },
+    'loggers': {
+        'django.request': {
+            'handlers': ['console'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    },
+}
