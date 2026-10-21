@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    {% if settings.favicon %}
-    <link rel="icon" type="image/png" href="{{ settings.favicon.url }}">
-    {% endif %}
+{% if settings.favicon %}
+<link rel="icon" type="image/png" sizes="192x192" href="{{ settings.favicon.url }}">
+<link rel="shortcut icon" href="{{ settings.favicon.url }}">
+{% endif %}
+<link rel="icon" href="{% static 'images/favicon.ico' %}" sizes="48x48">
 
     <meta name="description" content="{% block meta_description %}Anvar — professional grafik dizayner. Logotip, brending, packaging va prezentatsiya xizmatlari.{% endblock %}">
     <title>{% block title %}Anvar Studio{% endblock %}</title>
