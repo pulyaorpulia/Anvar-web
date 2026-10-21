@@ -60,7 +60,8 @@ def chat_api(request):
             messages=messages,
         )
         reply = resp.content[0].text
-    except Exception:
+    except Exception as e:
+        print('CHAT ERROR:', repr(e))
         return JsonResponse({'reply': "Kechirasiz, hozir javob bera olmayapman. Keyinroq urinib ko'ring."}, status=502)
 
     return JsonResponse({'reply': reply})
