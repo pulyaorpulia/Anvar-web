@@ -1,21 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     const navbar = document.querySelector('.navbar');
-    window.addEventListener('scroll', function () {
-        if (window.scrollY > 50) {
-            navbar.classList.add('navbar--scrolled');
-        } else {
-            navbar.classList.remove('navbar--scrolled');
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar--scrolled');
+            } else {
+                navbar.classList.remove('navbar--scrolled');
+            }
+        });
+    }
 
     const burgerBtn = document.getElementById('burgerBtn');
     const navMenu = document.getElementById('navMenu');
-    burgerBtn.addEventListener('click', function () {
-        burgerBtn.classList.toggle('active');
-        navMenu.classList.toggle('open');
-    });
-
+    if (burgerBtn && navMenu) {
+        burgerBtn.addEventListener('click', function () {
+            burgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('open');
+        });
+    }
 
     const messages = document.querySelectorAll('.message');
     messages.forEach(function (msg) {
@@ -103,84 +106,70 @@ document.querySelectorAll('.service__row').forEach(function (row) {
     const dotsWrap = document.getElementById('teamDots');
     const prevBtn = document.getElementById('teamPrev');
     const nextBtn = document.getElementById('teamNext');
+    const grid = document.getElementById('teamGrid');
 
-    if (!cards.length) return;
+    if (!cards.length || !dotsWrap || !prevBtn || !nextBtn || !grid) return;
 
-    const VISIBLE = window.innerWidth <= 480 ? 1 : window.innerWidth <= 768 ? 2 : 3;
+    // Telefonda 2 ta, kompyuterda 3 ta
+    const VISIBLE = window.innerWidth <= 768 ? 2 : 3;
     const total = cards.length;
+    const pages = Math.ceil(total / VISIBLE);
     let current = 0;
 
-    // Dotlar yaratish
-    const pageCount = Math.ceil(total / VISIBLE);
-    for (let i = 0; i < pageCount; i++) {
+    // Nuqtalar (har sahifaga bitta)
+    for (let i = 0; i < pages; i++) {
         const dot = document.createElement('button');
-        dot.className = 'team__dot' + (i === 0 ? ' active' : '');
-        dot.setAttribute('aria-label', i + 1 + '-sahifa');
-        dot.addEventListener('click', function () { goTo(i); });
+        dot.className = 'team__dot';
+        dot.setAttribute('aria-label', (i + 1) + '-sahifa');
+        dot.addEventListener('click', function () { show(i); });
         dotsWrap.appendChild(dot);
     }
+    const dots = dotsWrap.querySelectorAll('.team__dot');
 
-    function showCards(page) {
-        const start = page * VISIBLE;
+    function show(page) {
+        current = Math.max(0, Math.min(page, pages - 1));
+        const start = current * VISIBLE;
         const end = start + VISIBLE;
 
         cards.forEach(function (card, i) {
-            card.classList.remove('active', 'visible');
-            if (i >= start && i < end) {
-                card.classList.add('active');
+            const inPage = i >= start && i < end;
+            card.classList.remove('visible');
+            card.classList.toggle('active', inPage);
+            if (inPage) {
+                const delay = (i - start) * 100;
                 setTimeout(function () {
                     card.classList.add('visible');
-                }, (i - start) * 100);
+                }, 30 + delay);
             }
         });
 
-        // Dotlar
-        document.querySelectorAll('.team__dot').forEach(function (dot, i) {
-            dot.classList.toggle('active', i === page);
+        dots.forEach(function (d, i) {
+            d.classList.toggle('active', i === current);
         });
-
-        // Tugmalar
-        prevBtn.disabled = page === 0;
-        nextBtn.disabled = page >= pageCount - 1;
-        current = page;
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === pages - 1;
     }
 
-    function goTo(page) {
-        if (page < 0 || page >= pageCount) return;
-        showCards(page);
-    }
+    prevBtn.addEventListener('click', function () { show(current - 1); });
+    nextBtn.addEventListener('click', function () { show(current + 1); });
 
-    prevBtn.addEventListener('click', function () { goTo(current - 1); });
-    nextBtn.addEventListener('click', function () { goTo(current + 1); });
-
-    // Auto slide — har 4 soniyada
+    // Auto slide — har 7 soniyada
     setInterval(function () {
-        const next = current + 1 >= pageCount ? 0 : current + 1;
-        goTo(next);
+        show(current + 1 >= pages ? 0 : current + 1);
     }, 7000);
 
-    // Boshlash
-    showCards(0);
+    // Telefonda barmoq bilan surish (swipe)
+    let startX = 0;
+    grid.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+    }, { passive: true });
+    grid.addEventListener('touchend', function (e) {
+        const diff = e.changedTouches[0].clientX - startX;
+        if (Math.abs(diff) > 50) show(diff < 0 ? current + 1 : current - 1);
+    }, { passive: true });
 
-    // Scroll animatsiya
-    const teamObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                document.querySelectorAll('.team__card.active').forEach(function (card, i) {
-                    setTimeout(function () {
-                        card.classList.add('visible');
-                    }, i * 120);
-                });
-                teamObserver.disconnect();
-            }
-        });
-    }, { threshold: 0.2 });
-
-    const teamSection = document.querySelector('.team');
-    if (teamSection) teamObserver.observe(teamSection);
+    show(0);
 })();
-
-
 
 
 // CTA VIDEO
@@ -250,5 +239,3 @@ if (lbSources.length && lbTriggers.length) {
         if (e.key === 'ArrowRight' && lbIndex < lbSources.length - 1) lbShow(lbIndex + 1);
     });
 }
-
-

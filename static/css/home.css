@@ -484,6 +484,7 @@
 
 /* TEAM */
 .team {
+    position: relative;
     padding: 5rem 0;
     border-top: 0.5px solid var(--gray-lt);
     overflow: hidden;
@@ -742,43 +743,55 @@
     }
 
     .team__grid {
-        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
 }
 
+/* Telefon: har sahifada 3 ta odam */
 @media (max-width: 480px) {
     .team__grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-    .team__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-    .team__header {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
     }
 
-    .team__grid {
-        grid-template-columns: repeat(2, 1fr);
+    .team__card {
+        max-width: none;
+        min-width: 0;
     }
-}
 
-@media (max-width: 480px) {
-    .team__grid {
-        grid-template-columns: repeat(2, 1fr);
+    .team__photo-wrap {
+        border-radius: 8px;
+    }
+
+    .team__info {
+        padding: 0.6rem 0;
+    }
+
+    .team__name {
+        font-size: 13px;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    .team__role-label {
+        font-size: 8px;
+        letter-spacing: 0.8px;
+        overflow-wrap: anywhere;
+    }
+
+    .team__num {
+        display: none;
+    }
+
+    .team__nav {
+        margin-top: 1.5rem;
+        gap: 1rem;
     }
 }
 
 /* PARTNERS */
 .partners {
+    position: relative;
     padding: 3rem 0;
     border-top: 0.5px solid var(--gray-lt);
     overflow: hidden;
@@ -906,6 +919,50 @@
 .partner__logo-link:hover .partner__name {
     color: var(--gold);
 }
+
+/* PARTNERS: telefon */
+@media (max-width: 768px) {
+    .partners__header {
+        margin-bottom: 2rem;
+    }
+
+    .partners__track-wrap {
+        padding: 1.2rem 0;
+    }
+
+    /* chetlardagi gradient ensiz bo'ladi */
+    .partners__track-wrap::before,
+    .partners__track-wrap::after {
+        width: 40px;
+    }
+
+    .partners__track {
+        animation-duration: 20s;
+    }
+
+    .partner__item {
+        padding: 0 1.2rem;
+    }
+
+    .partner__logo-link {
+        gap: 6px;
+    }
+
+    .partner__logo-link img {
+        height: 40px;
+        max-width: 80px;
+        border-radius: 8px;
+    }
+
+    .partner__name {
+        font-size: 9px;
+        letter-spacing: 1px;
+        max-width: 80px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
 
 /* BOTTOM */
 .partners__bottom {
