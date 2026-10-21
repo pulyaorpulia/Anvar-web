@@ -59,7 +59,9 @@ def chat_api(request):
             system=CHAT_SYSTEM_PROMPT,
             messages=messages,
         )
-        reply = resp.content[0].text
+        reply = "".join(b.text for b in resp.content if b.type == "text").strip()
+        if not reply:
+            reply = "Kechirasiz, javob topa olmadim. Savolni boshqacha yozib ko'ring."
     except Exception as e:
         print('CHAT ERROR:', repr(e))
         return JsonResponse({'reply': "Kechirasiz, hozir javob bera olmayapman. Keyinroq urinib ko'ring."}, status=502)
