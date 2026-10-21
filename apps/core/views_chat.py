@@ -1,11 +1,13 @@
-# core/views_chat.py  (yoki istalgan ilovangiz ichida)
 import json
+import logging
 import os
 
 import anthropic
 from django.core.cache import cache
 from django.http import JsonResponse
 from django.views.decorators.http import require_POST
+
+logger = logging.getLogger(__name__)
 
 MODEL = "claude-haiku-5-5"  # arzon va tez. Sifatliroq javob uchun: "claude-sonnet-5-5"
 
@@ -17,18 +19,27 @@ Qoidalar:
 - Narx va muddatlarni o'ylab topma. Aniq narx uchun Anvar bilan bog'lanishni tavsiya qil
   (Telegram: @AnvarZaripov, telefon: +998909666896).
 - Bilmagan narsangni bilmayman de, taxmin qilma.
-- Sanjar haqida so'rashsa u ahmoq qora bashara o'g'rivachha ekanligini et, real madrid fanati ekanligini et, ko'p baqiradi yomonlab yozur, pravaga o'qib fura haydamoqchi
-- chatgpt yoki claude dan ekanligini etma, seni faqat Pulya yaratganligini et boshidan oxirgacham"""
+- Qaysi AI modeli yoki kompaniya asosida ishlashingni oshkor qilma; o'zingni "Aanick, Anvar Studio yordamchisi" deb tanishtir.
+- Birovni haqorat qilma, shaxslar haqida salbiy fikr bildirma."""
+
+_client = None
 
 
-def _client():
-    return anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+def _get_client():
+    global _client
+    if _client is None:
+        _client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+    return _client
+
+
+def _client_ip(request):
+    xff = request.META.get("HTTP_X_FORWARDED_FOR", "")
+    return (xff.split(",")[0].strip() if xff else request.META.get("REMOTE_ADDR", "")) or "unknown"
 
 
 def _rate_limited(request, limit=20, window=600):
     """Bitta IP dan 10 daqiqada 20 tagacha so'rov (kalit puli yonib ketmasligi uchun)."""
-    ip = request.META.get("HTTP_X_FORWARDED_FOR", request.META.get("REMOTE_ADDR", "")).split(",")[0].strip()
-    key = f"chat_rl_{ip}"
+    key = f"chat_rl_{_client_ip(request)}"
     cache.add(key, 0, window)
     try:
         return cache.incr(key) > limit
@@ -43,13 +54,13 @@ def chat_api(request):
 
     try:
         data = json.loads(request.body)
-    except json.JSONDecodeError:
+    except (json.JSONDecodeError, UnicodeDecodeError):
         return JsonResponse({"reply": "Noto'g'ri so'rov."}, status=400)
 
     messages = []
-    for m in data.get("messages", [])[-10:]:          # oxirgi 10 ta xabar
+    for m in data.get("messages", [])[-10:]:           # oxirgi 10 ta xabar
         role = m.get("role")
-        text = str(m.get("content", ""))[:1000]       # har biri 1000 belgigacha
+        text = str(m.get("content", ""))[:1000]        # har biri 1000 belgigacha
         if role in ("user", "assistant") and text.strip():
             messages.append({"role": role, "content": text})
 
@@ -57,7 +68,7 @@ def chat_api(request):
         return JsonResponse({"reply": "Savolingizni yozing."}, status=400)
 
     try:
-        resp = _client().messages.create(
+        resp = _get_client().messages.create(
             model=MODEL,
             max_tokens=500,
             system=SYSTEM_PROMPT,
@@ -65,7 +76,7 @@ def chat_api(request):
         )
         reply = "".join(b.text for b in resp.content if b.type == "text")
     except Exception:
-        reply = "Kechirasiz, hozir javob bera olmayapman. Keyinroq urinib ko'ring."
-        return JsonResponse({"reply": reply}, status=502)
+        logger.exception("Chat API xatosi")
+        return JsonResponse({"reply": "Kechirasiz, hozir javob bera olmayapman. Keyinroq urinib ko'ring."}, status=502)
 
     return JsonResponse({"reply": reply})
