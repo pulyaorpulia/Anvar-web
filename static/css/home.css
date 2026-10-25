@@ -835,8 +835,9 @@
     width: 100%;
     overflow: hidden;
     padding: 2rem 0;
-    border-top: 0.5px solid var(--gray-lt);
+    /*border-top: 0.5px solid var(--gray-lt);
     border-bottom: 0.5px solid var(--gray-lt);
+    */
 }
 
 .partners__track-wrap::before,
