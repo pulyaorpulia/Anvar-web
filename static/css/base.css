@@ -1,15 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap');
 
 :root {
-    --black:   #1A1917;
-    --cream:   #F5F3EE;
-    --white:   #FAFAF8;
-    --gold:    #C8A96E;
-    --gray:    #888884;
-    --gray-lt: #E0DDD8;
-    --serif:   'Cormorant Garamond', Georgia, serif;
-    --sans:    'Inter', system-ui, sans-serif;
+    /* Asosiy ranglar */
+    --cream:     #FDFFF8;   /* 1-daraja: sayt foni */
+    --black:     #1A2120;   /* 2-daraja: matn va qora bo'limlar */
+    --gold:      #00C663;   /* 3-daraja: aksent (tugma, em, chiziqlar) */
+
+    /* Yordamchi ranglar (asosiy ranglardan hosil qilingan) */
+    --white:     #FFFFFF;
+    --gray:      #6F7876;   /* ikkinchi darajali matn */
+    --gray-lt:   #DDE3DF;   /* chegara chiziqlari */
+    --black-lt:  #2A3331;   /* qora bo'limda hover/kartalar uchun */
+    --gold-dk:   #00A552;   /* aksent hover holati */
+
+    /* Shriftlar */
+    --serif:     'Cormorant Garamond', Georgia, serif;
+    --sans:      'Inter', system-ui, sans-serif;
 }
+
 
 *, *::before, *::after {
     margin: 0;
