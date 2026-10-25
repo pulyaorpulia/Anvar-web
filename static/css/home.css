@@ -28,7 +28,7 @@
 
 .hero__title {
     font-size: clamp(48px, 4vw, 88px);
-    font-family: 'Gilroy', sans-serif;
+    font-family: var(--display);
     font-weight: 700;
     color: #1A2120;
     margin-bottom: 2.5rem;
@@ -151,6 +151,8 @@
 .achievement__number .count {
     display: inline-block;
     color: #FDFFF8;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400;
 }
 
 .achievement__suffix {
@@ -203,9 +205,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--serif);
+    font-family: 'Gilroy', sans-serif;
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     color: #FDFFF8;
 }
 
@@ -221,7 +223,8 @@
 
 .section-title {
     font-size: clamp(32px, 4vw, 52px);
-    font-weight: 300;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
     color: #1A2120;
 }
 
@@ -277,9 +280,9 @@
 }
 
 .project-card__title {
-    font-family: var(--serif);
+    font-family: 'Gilroy', sans-serif;
     font-size: 22px;
-    font-weight: 400;
+    font-weight: 700;
     color: var(--black);
     margin-bottom: 0.5rem;
 }
@@ -330,14 +333,16 @@
 
 .services__title {
     font-size: clamp(36px, 3vw, 64px);
-    font-weight: 300;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
     color: var(--cream);
     line-height: 1.05;
     margin-top: 1rem;
 }
 
 .services__title em {
-    font-style: italic;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
     color: var(--gold);
 }
 
@@ -394,9 +399,9 @@
 }
 
 .service__name {
-    font-family: var(--serif);
     font-size: clamp(20px, 2.5vw, 28px);
-    font-weight: 300;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;;
     color: var(--cream);
     transition: color 0.3s ease;
 }
@@ -518,15 +523,17 @@
 
 .team__title {
     font-size: clamp(36px, 3vw, 64px);
-    font-weight: 300;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
     color: var(--black);
     line-height: 1.05;
     margin-top: 1rem;
 }
 
 .team__title em {
-    font-style: italic;
     color: var(--gold);
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
 }
 
 .team__subtitle {
@@ -660,9 +667,9 @@
 }
 
 .team__name {
-    font-family: var(--serif);
     font-size: 18px;
-    font-weight: 400;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
     color: var(--black);
     margin-bottom: 4px;
     transition: color 0.2s ease;
@@ -827,7 +834,8 @@
 
 .partners__title {
     font-size: clamp(36px, 3vw, 64px);
-    font-weight: 300;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 700;
     color: var(--black);
     line-height: 1.05;
 }
@@ -988,9 +996,9 @@
 }
 
 .partners__cta-text {
-    font-family: var(--serif);
+    font-family: 'Gilroy', sans-serif;
     font-size: 22px;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--gray);
 }
 
