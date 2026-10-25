@@ -28,13 +28,14 @@
 
 .hero__title {
     font-size: clamp(48px, 4vw, 88px);
+    font-family: 'Gilroy', sans-serif;
     font-weight: 700;
     color: #1A2120;
     margin-bottom: 2.5rem;
 }
 
 .hero__title em {
-    font-style: italic;
+    /* font-style: italic; */
     color: #00C663;
     font-family: 'Gilroy', sans-serif;
     font-weight: 700;
