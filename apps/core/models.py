@@ -11,7 +11,7 @@ class SiteSettings(models.Model):
     instagram = models.URLField(blank=True, verbose_name="Instagram")
     hero_image = models.ImageField(upload_to='site/', blank=True, verbose_name="Hero rasmi")
     about_image = models.ImageField(upload_to='site/', blank=True, verbose_name="Haqimda rasmi")
-    logo = models.ImageField(upload_to='site/', blank=True, verbose_name="Logotip")
+    logo = models.FileField(upload_to='site/', blank=True, verbose_name="Logotip")
     favicon = models.ImageField(upload_to='site/', blank=True, verbose_name="Favicon")
     # Google Maps embed linki
     map_embed_url = models.TextField(blank=True, verbose_name="Xarita embed URL")
