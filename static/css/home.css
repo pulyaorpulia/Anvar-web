@@ -39,7 +39,7 @@
     color: #00C663;
     font-family: var(--display);
     font-weight: 700;
-    font-size: 0.85em;
+    font-size: inherit;
 }
 
 .hero__desc {
