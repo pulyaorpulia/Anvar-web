@@ -219,7 +219,7 @@
 .section-title {
     font-size: clamp(32px, 4vw, 52px);
     font-weight: 300;
-    color: var(--gold);
+    color: #1A2120;
 }
 
 /* FEATURED PROJECTS */
