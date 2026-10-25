@@ -31,9 +31,7 @@ html {
 
 body {
     font-family: var(--sans);
-    background: linear-gradient(135deg, #ede8dc 0%, #e0d9ce 50%, #ede8dc 100%);
-    background-attachment: fixed;
-    background-color: var(--cream);
+    background-color: var(--cream);   /* #FDFFF8 */
     color: var(--black);
     font-size: 16px;
     line-height: 1.7;
