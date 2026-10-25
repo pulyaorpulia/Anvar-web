@@ -97,7 +97,7 @@
 /* ACHIEVEMENTS */
 .achievements {
     padding: 0rem 0;
-    background: var(--black);
+    background: #1A2120;
     /* border-top: 0.5px solid var(--gray-lt); */
     /* border-bottom: 0.5px solid var(--gray-lt); */
     overflow: hidden;
@@ -133,7 +133,7 @@
 
 .achievement__icon {
     font-size: 20px;
-    color: var(--gold);
+    color: #00C663;
     margin-bottom: 4px;
 }
 
@@ -141,25 +141,26 @@
     font-family: var(--serif);
     font-size: 56px;
     font-weight: 300;
-    color: var(--white);
+    color: #FFFFFF;
     line-height: 1;
 }
 
 .achievement__number .count {
     display: inline-block;
+    color: #FFFFFF;
 }
 
 .achievement__suffix {
     font-family: var(--serif);
     font-size: 36px;
-    color: var(--gold);
+    color: #00C663;
 }
 
 .achievement__label {
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    color: var(--gray-lt);
+    color: #DDE3DF;
     text-align: center;
 }
 
