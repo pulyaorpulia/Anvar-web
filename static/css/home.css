@@ -28,7 +28,7 @@
 
 .hero__title {
     font-size: clamp(48px, 4vw, 88px);
-    font-weight: 300;
+    font-weight: 700;
     color: #1A2120;
     margin-bottom: 2.5rem;
 }
@@ -36,6 +36,7 @@
 .hero__title em {
     font-style: italic;
     color: #00C663;
+    font-weight: 700;
 }
 
 .hero__desc {
