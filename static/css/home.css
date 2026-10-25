@@ -76,19 +76,20 @@
 .hero__social-btn {
     width: 48px;
     height: 48px;
-    border: 0.5px solid var(--gray-lt);
+    border: 1px solid var(--gold);       /* 3-daraja: yashil chegara */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--black);
+    color: var(--gold);                  /* 3-daraja: yashil ikonka */
+    background: transparent;
     transition: all 0.3s ease;
 }
 
 .hero__social-btn:hover {
-    background: var(--gold);
+    background: var(--gold);             /* 3-daraja: yashil to'ldirish */
     border-color: var(--gold);
-    color: #fff;
+    color: var(--black);                 /* 2-daraja: to'q ikonka */
     transform: translateY(-3px);
 }
 
@@ -214,7 +215,7 @@
 .section-title {
     font-size: clamp(32px, 4vw, 52px);
     font-weight: 300;
-    color: var(--black);
+    color: var(--gold);
 }
 
 /* FEATURED PROJECTS */
@@ -494,8 +495,9 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at 20% 50%, rgba(0, 198, 99, 0.08) 0%, transparent 60%),
+    /*background: radial-gradient(ellipse at 20% 50%, rgba(0, 198, 99, 0.08) 0%, transparent 60%),
                 radial-gradient(ellipse at 80% 50%, rgba(0, 198, 99, 0.08) 0%, transparent 60%);
+                */
     pointer-events: none;
 }
 
@@ -849,12 +851,14 @@
 
 .partners__track-wrap::before {
     left: 0;
-    background: linear-gradient(to right, var(--cream), transparent);
+    /*background: linear-gradient(to right, var(--cream), transparent);
+    */
 }
 
 .partners__track-wrap::after {
     right: 0;
-    background: linear-gradient(to left, var(--cream), transparent);
+    /*background: linear-gradient(to left, var(--cream), transparent);
+    */
 }
 
 .partners__track {
