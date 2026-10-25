@@ -461,8 +461,8 @@
 }
 
 .service__icon-wrap .service__icon-img {
-    width: 56px !important;
-    height: 56px !important;
+    width: 40px !important;
+    height: 40px !important;
     max-width: none;
     object-fit: contain;
     display: block;
