@@ -76,23 +76,22 @@
 .hero__social-btn {
     width: 48px;
     height: 48px;
-    border: 1px solid var(--gold);       /* 3-daraja: yashil chegara */
+    border: 1px solid #1A2120;           /* doira chizig'i: to'q */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gold);                  /* 3-daraja: yashil ikonka */
+    color: #00C663;                      /* ikonka: yashil */
     background: transparent;
     transition: all 0.3s ease;
 }
 
 .hero__social-btn:hover {
-    background: var(--gold);             /* 3-daraja: yashil to'ldirish */
-    border-color: var(--gold);
-    color: var(--black);                 /* 2-daraja: to'q ikonka */
+    background: #1A2120;                 /* doira to'ladi: to'q */
+    border-color: #1A2120;
+    color: #00C663;                      /* ikonka yashil qoladi */
     transform: translateY(-3px);
 }
-
 
 /* ACHIEVEMENTS */
 .achievements {
