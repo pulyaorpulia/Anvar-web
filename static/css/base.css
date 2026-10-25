@@ -217,9 +217,10 @@ img {
 .hero__title,
 .section-title,
 .hero__social-btn,
-.count {
+/*.count {
     color: var(--gold);
 }
+*/
 
 /* Hero sarlavhasi: ikkala qatorning ham rangi bir xil */
 .hero__title em {
