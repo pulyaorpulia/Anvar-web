@@ -211,3 +211,24 @@ img {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+
+/* Yashil aksentga o'tkazilgan elementlar */
+.hero__title,
+.section-title,
+.hero__social-btn,
+.count {
+    color: var(--gold);
+}
+
+/* Hero sarlavhasi: ikkala qatorning ham rangi bir xil */
+.hero__title em {
+    color: var(--gold);
+}
+
+/* Navbar: faol havola */
+.navbar__link.active,
+.navbar a.active,
+.nav__link.active {
+    color: var(--gold-dk);
+}
