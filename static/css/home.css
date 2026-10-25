@@ -157,8 +157,8 @@
 }
 
 .achievement__suffix {
-    font-family: var(--serif);
-    font-size: 46px;
+    font-family: 'Gilroy';
+    font-weight: 400;
     color: #00C663;
 }
 
