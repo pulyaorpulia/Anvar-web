@@ -213,23 +213,36 @@ img {
 }
 
 
-/* Yashil aksentga o'tkazilgan elementlar */
+/* Yashil aksentga o'tkazilgan elementlar (o'chirilgan)
 .hero__title,
 .section-title,
 .hero__social-btn,
-/*.count {
+.count {
     color: var(--gold);
 }
 */
 
-/* Hero sarlavhasi: ikkala qatorning ham rangi bir xil */
+/* Hero sarlavhasi: em yashil */
 .hero__title em {
-    color: var(--gold);
+    color: #00C663;
 }
 
 /* Navbar: faol havola */
 .navbar__link.active,
 .navbar a.active,
 .nav__link.active {
-    color: var(--gold-dk);
+    color: #00A552;
+}
+
+/* Sarlavhalar: asosiy qismi to'q, em qismi yashil */
+h1, h2, h3,
+.hero__title,
+.section-title {
+    color: #1A2120;
+}
+
+h1 em, h2 em, h3 em,
+.hero__title em,
+.section-title em {
+    color: #00C663;
 }
