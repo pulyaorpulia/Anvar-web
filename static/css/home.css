@@ -35,10 +35,10 @@
 }
 
 .hero__title em {
-    /* font-style: italic; */
+    font-style: normal;
     color: #00C663;
     font-family: var(--display);
-    font-weight: 700;
+    font-weight: 500;
 }
 
 .hero__desc {
