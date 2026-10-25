@@ -452,9 +452,18 @@
     transition: width 0.4s ease;
 }
 
-.service__icon-img {
-    width: 36px;
-    height: 36px;
+.service__icon-wrap {
+    width: auto;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service__icon-wrap .service__icon-img {
+    width: 56px !important;
+    height: 56px !important;
+    max-width: none;
     object-fit: contain;
     display: block;
 }
