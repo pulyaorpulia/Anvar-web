@@ -1,23 +1,54 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&display=swap');
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Gilroy';
+    src: url('../fonts/Gilroy-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
 
 :root {
     /* Asosiy ranglar */
-    --cream:     #FDFFF8;   /* 1-daraja: sayt foni */
-    --black:     #1A2120;   /* 2-daraja: matn va qora bo'limlar */
-    --gold:      #00C663;   /* 3-daraja: aksent (tugma, em, chiziqlar) */
+    --cream:     #FDFFF8;
+    --black:     #1A2120;
+    --gold:      #00C663;
 
-    /* Yordamchi ranglar (asosiy ranglardan hosil qilingan) */
+    /* Yordamchi ranglar */
     --white:     #FFFFFF;
-    --gray:      #6F7876;   /* ikkinchi darajali matn */
-    --gray-lt:   #DDE3DF;   /* chegara chiziqlari */
-    --black-lt:  #2A3331;   /* qora bo'limda hover/kartalar uchun */
-    --gold-dk:   #00A552;   /* aksent hover holati */
+    --gray:      #6F7876;
+    --gray-lt:   #DDE3DF;
+    --black-lt:  #2A3331;
+    --gold-dk:   #00A552;
 
     /* Shriftlar */
     --serif:     'Cormorant Garamond', Georgia, serif;
-    --sans:      'Inter', system-ui, sans-serif;
+    --sans:      'Gilroy', system-ui, sans-serif;
 }
-
 
 *, *::before, *::after {
     margin: 0;
