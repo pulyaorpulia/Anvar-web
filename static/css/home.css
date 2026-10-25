@@ -29,7 +29,7 @@
 .hero__title {
     font-size: clamp(48px, 4vw, 88px);
     font-weight: 300;
-    color: var(--black);
+    color: var(--gold);
     margin-bottom: 2.5rem;
 }
 
