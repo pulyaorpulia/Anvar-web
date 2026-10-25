@@ -246,3 +246,18 @@ h1 em, h2 em, h3 em,
 .section-title em {
     color: #00C663;
 }
+
+/* To'q fonli bo'limlarda sarlavha och rangda */
+.related .section-title,
+.achievements h2,
+.footer h2,
+.footer h3 {
+    color: #FDFFF8;
+}
+
+/* To'q fonli bo'limlarda em yashil qolsin */
+.related .section-title em,
+.footer h2 em,
+.footer h3 em {
+    color: #00C663;
+}
