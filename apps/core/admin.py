@@ -4,7 +4,7 @@ from .models import Contact, SiteSettings, TeamMember, Achievement, Partner
 
 @admin.register(SiteSettings)
 class SiteSettingsAdmin(admin.ModelAdmin):
-    list_display = ['phone', 'email', 'address']
+    list_display = ['phone', 'email', 'address', 'icon_image']
 
 
 @admin.register(TeamMember)

@@ -16,7 +16,8 @@ class SiteSettings(models.Model):
     # Google Maps embed linki
     map_embed_url = models.TextField(blank=True, verbose_name="Xarita embed URL")
     demo_video = models.FileField(upload_to='videos/', blank=True, null=True, verbose_name="Demo video")
-
+    icon_image = models.FileField(upload_to='services/', blank=True, null=True,
+                                  verbose_name='Ikonka rasmi')
 
     class Meta:
         verbose_name = "Sayt sozlamalari"

@@ -182,7 +182,13 @@
             <div class="service__row" data-index="{{ forloop.counter }}">
                 <div class="service__row-left">
                     <span class="service__num">0{{ forloop.counter }}</span>
-                    <span class="service__icon-wrap">{{ service.icon }}</span>
+<span class="service__icon-wrap">
+    {% if service.icon_image %}
+    <img src="{{ service.icon_image.url }}" alt="{{ service.title }}" class="service__icon-img">
+    {% else %}
+    {{ service.icon }}
+    {% endif %}
+</span>
                     <h3 class="service__name">{{ service.title }}</h3>
                 </div>
                 <div class="service__row-right">
