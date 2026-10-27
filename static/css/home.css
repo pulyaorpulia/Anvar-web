@@ -453,17 +453,18 @@
 }
 
 .service__icon-wrap {
-    width: auto;
-    height: auto;
+    width: 48px;
+    height: 48px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .service__icon-wrap .service__icon-img {
-    width: 40px !important;
-    height: 40px !important;
-    max-width: none;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100%;
     object-fit: contain;
     display: block;
 }
