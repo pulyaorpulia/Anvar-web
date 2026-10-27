@@ -345,6 +345,7 @@
     font-family: 'Gilroy', sans-serif;
     font-weight: 700;
     color: var(--gold);
+    font-style: normal;
 }
 
 .services__subtitle {
