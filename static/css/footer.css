@@ -21,12 +21,13 @@
 }
 
 .footer__tagline {
+    font-family: 'Gilroy', sans-serif;
     font-family: var(--serif);
     font-size: 18px;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--gray);
     margin-top: 1rem;
-    font-style: italic;
+    font-style: normal;
 }
 
 .footer__links .label {

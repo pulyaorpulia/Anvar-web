@@ -22,12 +22,13 @@
 }
 
 .navbar__logo {
+    font-family: 'Gilroy', sans-serif;
     display: flex;
     align-items: center;
     gap: 10px;
     font-family: var(--serif);
     font-size: 26px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--black);
     letter-spacing: -1px;
 }
