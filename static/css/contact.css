@@ -88,7 +88,8 @@
 }
 
 .contact-quick__val {
-    font-family: var(--serif);
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400;
     font-size: 15px;
     color: var(--black);
     overflow-wrap: anywhere;    /* uzun email/telefonni qatorga o'raydi */
@@ -150,9 +151,9 @@
 
 .contact__value {
     display: block;
-    font-family: var(--serif);
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400;
     font-size: 20px;
-    font-weight: 300;
     color: var(--black);
     transition: color 0.2s ease;
     line-height: 1.6;
