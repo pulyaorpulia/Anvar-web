@@ -46,7 +46,7 @@
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 0px;
 }
 
 .detail-main-img__wrap img {
@@ -363,6 +363,8 @@
     }
 
     .detail-hero__title {
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 700;
         font-size: 30px;
         margin-bottom: 1rem;
         overflow-wrap: anywhere;
