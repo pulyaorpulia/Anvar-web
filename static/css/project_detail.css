@@ -180,6 +180,8 @@
 }
 
 .detail-content__text .label {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400
     display: block;
     margin-bottom: 1rem;
     color: var(--gold);
