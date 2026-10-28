@@ -253,7 +253,7 @@
 
 .related .section-header {
     font-family: 'Gilroy', sans-serif;
-    font-weight: 400
+    font-weight: 700
     margin-bottom: 4rem;
 }
 
@@ -415,6 +415,8 @@
     }
 
     .detail-content__title {
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 700;
         font-size: 26px;
         margin-bottom: 1rem;
     }
@@ -458,6 +460,8 @@
 
     .related .section-title {
         font-size: 30px;
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 400
     }
 
     .related .project-card__info {
