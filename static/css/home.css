@@ -374,7 +374,7 @@
 }
 
 .service__row.visible {
-    opacity: 0;
+    opacity: 1;
     transform: translateX(0);
 }
 
@@ -396,7 +396,7 @@
 .service__icon-wrap {
     font-size: 25px;
     color: var(--gold);
-    opacity: 0.6;
+    opacity: 1;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
