@@ -251,13 +251,15 @@ img {
 
 .cta__title {
     font-family: 'Gilroy', sans-serif;
-    font-size: clamp(42px, 3vw, 80px);
+    font-size: clamp(35px, 2vw, 72px);
     font-weight: 400;
     color: var(--black);
     line-height: 1.05;
 }
 
 .cta__title em {
+    font-family: 'Gilroy', sans-serif;
+    font-size: inherit;
     font-style: normal;
     color: var(--gold);
 }
