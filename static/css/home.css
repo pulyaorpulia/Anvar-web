@@ -101,8 +101,8 @@
 .achievements {
     padding: 0rem 0;
     background: #1A2120;
-    border-top: 0.5px solid var(--gray-lt);
-    border-bottom: 0.5px solid var(--gray-lt);
+    /* border-top: 0.5px solid var(--gray-lt); */
+    /* border-bottom: 0.5px solid var(--gray-lt); */
     overflow: hidden;
 }
 
