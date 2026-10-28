@@ -191,15 +191,18 @@
 }
 
 .contact__form-title {
+    font-family: 'Gilroy';
+    font-weight: 700;
     font-size: clamp(24px, 3vw, 38px);
-    font-weight: 300;
     color: var(--black);
     margin-bottom: 2.5rem;
     line-height: 1.2;
 }
 
 .contact__form-title em {
-    font-style: italic;
+    font-family: 'Gilroy';
+    font-weight: 700;
+    font-style: normal;
     color: var(--gold);
 }
 
@@ -293,14 +296,17 @@
 }
 
 .page-hero__title {
+    font-family: 'Gilroy';
+    font-weight: 700;
     font-size: clamp(48px, 4vw, 88px);
-    font-weight: 300;
     color: var(--black);
     line-height: 1.05;
 }
 
 .page-hero__title em {
-    font-style: italic;
+    font-family: 'Gilroy';
+    font-weight: 700;
+    font-style: normal;
     color: var(--gold);
 }
 
