@@ -298,6 +298,8 @@ h1, h2, h3,
 .hero__title,
 .section-title {
     color: #1A2120;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400;
 }
 
 h1 em, h2 em, h3 em,
