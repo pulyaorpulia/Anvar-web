@@ -252,6 +252,8 @@
 }
 
 .related .section-header {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400
     margin-bottom: 4rem;
 }
 
