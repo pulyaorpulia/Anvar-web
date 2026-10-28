@@ -114,8 +114,7 @@
 
 .achievement__item {
     padding: 3rem 2rem;
-    border-right: 0.5px solid var(--gray-lt);
-    /* border-right: 0.5px solid rgba(253, 255, 248, 0.15); */
+    border-right: 0.5px solid rgba(253, 255, 248, 0.15);
     display: flex;
     flex-direction: column;
     align-items: center;
