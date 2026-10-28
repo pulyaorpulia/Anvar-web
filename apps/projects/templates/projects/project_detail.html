@@ -27,10 +27,7 @@
     <div class="container">
         {% if project.image %}
         <div class="detail-main-img__wrap">
-            <img src="{{ project.image.url }}"
-                 alt="{{ project.title }}"
-                 class="lightbox-trigger"
-                 data-index="0">
+                 <img src="{{ project.image.url }}" alt="{{ project.title }}">
         </div>
         {% endif %}
 
@@ -85,8 +82,7 @@
             <div class="detail-gallery__item">
                 <img src="{{ img.image_gallery.url }}"
                      alt="{{ project.title }} — {{ forloop.counter }}"
-                     class="lightbox-trigger"
-                     data-index="{{ forloop.counter }}">
+                     loading="lazy">
             </div>
             {% endfor %}
         </div>

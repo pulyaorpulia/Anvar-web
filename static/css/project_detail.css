@@ -43,44 +43,16 @@
 }
 
 .detail-main-img__wrap {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
-    max-height: 480px;
     overflow: hidden;
-    border-radius: 8px;
-    position: relative;
-}
-
-.detail-main-img__wrap::after {
-    position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    background: rgba(0,0,0,0.5);
-    color: #fff;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.detail-main-img__wrap:hover::after {
-    opacity: 1;
+    border-radius: 4px;
 }
 
 .detail-main-img__wrap img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.detail-main-img__wrap:hover img {
-    transform: scale(1.03);
+    height: auto;
+    display: block;
 }
 
 
@@ -231,67 +203,29 @@
 }
 
 
-/* GALLERY */
+/* GALLERY: rasmlar ketma-ket, katta */
 .detail-gallery {
-    padding: 2rem 0;
+    padding: 2rem 0 4rem;
     border-top: 0.5px solid var(--gray-lt);
 }
 
 .detail-gallery__grid {
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    grid-auto-rows: 280px;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     margin-top: 3rem;
 }
 
 .detail-gallery__item {
+    width: 100%;
     overflow: hidden;
     border-radius: 4px;
 }
 
-/* 1-rasm — katta, chap */
-.detail-gallery__item:nth-child(1) {
-    grid-column: span 7;
-    grid-row: span 2;
-}
-
-/* 2-rasm — o'ng yuqori */
-.detail-gallery__item:nth-child(2) {
-    grid-column: span 5;
-}
-
-/* 3-rasm — o'ng pastki */
-.detail-gallery__item:nth-child(3) {
-    grid-column: span 5;
-}
-
-/* 4-rasm — kichik */
-.detail-gallery__item:nth-child(4) {
-    grid-column: span 4;
-}
-
-/* 5-rasm — o'rta */
-.detail-gallery__item:nth-child(5) {
-    grid-column: span 4;
-}
-
-/* 6-rasm — kichik */
-.detail-gallery__item:nth-child(6) {
-    grid-column: span 4;
-}
-
-/* 7+ rasmlar */
-.detail-gallery__item:nth-child(n+7) {
-    grid-column: span 6;
-}
-
 .detail-gallery__item img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    cursor: zoom-in;
+    height: auto;
+    display: block;
 }
 
 .detail-gallery__item:hover img {
@@ -361,7 +295,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     filter: grayscale(30%);
 }
 
