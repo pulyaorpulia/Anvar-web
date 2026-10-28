@@ -22,7 +22,6 @@
 
 .footer__tagline {
     font-family: 'Gilroy', sans-serif;
-    font-family: var(--serif);
     font-size: 18px;
     font-weight: 400;
     color: var(--gray);
