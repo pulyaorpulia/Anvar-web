@@ -48,6 +48,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'Autography';
+    src: url('../fonts/AUTOGRAPHY.OTF') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
     /* Asosiy ranglar */
     --cream:     #FDFFF8;

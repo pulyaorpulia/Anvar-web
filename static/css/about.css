@@ -10,14 +10,17 @@
 }
 
 .page-hero__title {
-    font-size: clamp(48px, 4vw, 88px);
-    font-weight: 300;
+    font-family: var(--display);   /* Benzin */
+    font-size: clamp(32px, 4vw, 72px);
+    font-weight: 700;
     color: var(--black);
     line-height: 1.05;
 }
 
 .page-hero__title em {
-    font-style: italic;
+    font-family: 'Autography', cursive;
+    font-style: normal;
+    font-weight: 400;
     color: var(--gold);
 }
 
