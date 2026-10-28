@@ -36,6 +36,9 @@
 
 .navbar__logo-dot {
     color: var(--gold);
+    font-family: 'Gilroy', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
 }
 
 .navbar__logo-img {
