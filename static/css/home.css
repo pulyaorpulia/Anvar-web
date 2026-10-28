@@ -101,8 +101,8 @@
 .achievements {
     padding: 0rem 0;
     background: #1A2120;
-    /* border-top: 0.5px solid var(--gray-lt); */
-    /* border-bottom: 0.5px solid var(--gray-lt); */
+    border-top: 0.5px solid var(--gray-lt);
+    border-bottom: 0.5px solid var(--gray-lt);
     overflow: hidden;
 }
 
@@ -115,7 +115,7 @@
 .achievement__item {
     padding: 3rem 2rem;
     border-right: 0.5px solid var(--gray-lt);
-    border-right: 0.5px solid rgba(253, 255, 248, 0.15);
+    /* border-right: 0.5px solid rgba(253, 255, 248, 0.15); */
     display: flex;
     flex-direction: column;
     align-items: center;
