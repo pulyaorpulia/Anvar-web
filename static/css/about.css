@@ -20,7 +20,7 @@
 .page-hero__title em {
     font-family: 'Autography', cursive;
     font-style: normal;
-    font-weight: 700;
+    font-weight: 100;
     color: var(--gold);
     font-size: clamp(32px, 4vw, 72px);
 }
