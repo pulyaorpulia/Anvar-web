@@ -8,6 +8,14 @@
     box-shadow: 0 6px 20px rgba(0,0,0,0.25);
     animation: aichat-pulse 2.2s infinite;
 }
+
+.aichat__fab-icon {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    display: block;
+}
+
 .aichat__fab:hover { transform: scale(1.06); }
 
 @keyframes aichat-pulse {
