@@ -33,6 +33,7 @@
     background: var(--cream);
     flex: 1;
     min-width: 180px;
+    text-decoration: none;
     transition: background 0.3s ease;
 }
 
@@ -43,27 +44,39 @@
 .contact-quick__icon {
     width: 44px;
     height: 44px;
+    flex-shrink: 0;
     border: 0.5px solid var(--gray-lt);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--gold);
-    flex-shrink: 0;
-    transition: all 0.3s ease;
     background: var(--white);
+    transition: all 0.3s ease;
+}
+
+.contact-quick__icon img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+    transition: filter 0.3s ease;
 }
 
 .contact-quick__item:hover .contact-quick__icon {
     background: var(--black);
     border-color: var(--black);
-    color: var(--white);
+}
+
+/* hover'da ikonka oq bo'ladi */
+.contact-quick__item:hover .contact-quick__icon img {
+    filter: brightness(0) invert(1);
 }
 
 .contact-quick__text {
     display: flex;
     flex-direction: column;
     gap: 3px;
+    min-width: 0;               /* uzun email sig'masa chiqib ketmasin */
 }
 
 .contact-quick__label {
@@ -78,6 +91,7 @@
     font-family: var(--serif);
     font-size: 15px;
     color: var(--black);
+    overflow-wrap: anywhere;    /* uzun email/telefonni qatorga o'raydi */
     transition: color 0.3s ease;
 }
 
