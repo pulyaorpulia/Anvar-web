@@ -122,8 +122,23 @@
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    position: relative;
+    border-right: none;
 }
 
+.achievement__item::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 15%;
+    height: 70%;
+    width: 0.5px;
+    background: rgba(253, 255, 248, 0.15);
+}
+
+.achievement__item:last-child::after {
+    display: none;
+}
 
 .achievement__item.visible {
     opacity: 1;
