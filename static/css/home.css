@@ -468,6 +468,10 @@
     object-fit: contain;
 }
 
+.service__icon-wrap img.service__icon-img--lg {
+    width: 58px;
+    height: 58px;
+}
 
 /* HOVER */
 .service__row:hover .service__num {
