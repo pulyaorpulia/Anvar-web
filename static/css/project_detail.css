@@ -173,9 +173,9 @@
 }
 
 .detail-info__block p {
-    font-family: var(--serif);
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400
     font-size: 18px;
-    font-weight: 300;
     color: var(--black);
 }
 
@@ -186,8 +186,9 @@
 }
 
 .detail-content__title {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400
     font-size: clamp(28px, 3vw, 42px);
-    font-weight: 300;
     color: var(--black);
     margin-bottom: 2rem;
 }
@@ -258,7 +259,8 @@
 
 .related .section-title {
     font-size: clamp(42px, 5vw, 72px);
-    font-weight: 300;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 400
     color: var(--white);
     margin-top: 0.75rem;
     line-height: 1.05;
@@ -404,6 +406,8 @@
 
     .detail-info__block p {
         font-size: 16px;
+        font-family: 'Gilroy', sans-serif;
+        font-weight: 400
     }
 
     .detail-content__title {
