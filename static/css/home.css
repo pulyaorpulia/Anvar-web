@@ -1256,12 +1256,24 @@
     .hero__socials {
         margin-top: 1rem;
         gap: 0.75rem;
+        display: flex;
+        justify-content: center;   /* markazga */
+        padding-left: 12px;        /* sal o'ngga surish */
     }
 
     .hero__social-btn {
-        width: 44px;
-        height: 44px;
+        width: 54px;
+        height: 54px;
     }
+
+.hero__social-btn svg,
+.hero__social-btn img,
+.hero__social-btn i {
+    width: 26px;               /* ikonka ham kattaroq */
+    height: 26px;
+    font-size: 26px;           /* agar Font Awesome bo'lsa */
+}
+
 
     /* ACHIEVEMENTS */
     .achievements__grid {
@@ -1304,4 +1316,361 @@
     .achievement__item:nth-child(even)::after {
         display: none;
     }
+}
+
+
+
+/* =========================================================
+   0. UMUMIY (media query'dan TASHQARIDA, faylning eng tepasiga)
+   ========================================================= */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+}
+
+img { max-width: 100%; height: auto; }
+
+.hero {
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
+}
+
+
+/* =========================================================
+   1. TELEFONLAR: Android + iPhone (0 – 743px)
+   ========================================================= */
+@media (max-width: 743px) {
+
+    /* HERO */
+    .hero {
+        padding-top: max(6rem, calc(env(safe-area-inset-top) + 5rem));
+        padding-bottom: 1.5rem;
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
+        display: block;
+    }
+
+    .hero__inner {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        padding: 0;
+    }
+
+    .hero__visual { order: -1; }
+
+    .hero__img-wrap {
+        aspect-ratio: 1 / 1;
+        max-height: none;
+        width: 100%;
+        border-radius: 16px;
+    }
+
+    .hero__img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero__content { margin-bottom: 0; }
+
+    .hero__title {
+        font-size: clamp(26px, 7.5vw, 36px);
+        margin-bottom: 1.2rem;
+        overflow-wrap: anywhere;
+    }
+
+    .hero__desc {
+        font-size: 15px;
+        line-height: 1.7;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    /* SOCIALS: markazroq, sal o'ngroq, kattaroq */
+    .hero__socials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        padding-left: 12px;
+    }
+
+    .hero__social-btn {
+        width: 54px;
+        height: 54px;
+    }
+
+    .hero__social-btn svg,
+    .hero__social-btn img,
+    .hero__social-btn i {
+        width: 26px;
+        height: 26px;
+        font-size: 26px;
+    }
+
+    /* ACHIEVEMENTS */
+    .achievements__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    .achievement__item { padding: 1.8rem 0.75rem; }
+    .achievement__number { font-size: 36px; }
+    .achievement__label { font-size: 9px; letter-spacing: 1px; }
+
+    .achievement__circle { width: 64px; height: 64px; }
+    .achievement__circle svg { width: 100%; height: 100%; }
+    .achievement__circle-text { font-size: 14px; }
+
+    .achievement__item:last-child:nth-child(odd) { grid-column: 1 / -1; }
+    .achievement__item:nth-child(even)::after { display: none; }
+}
+
+
+/* =========================================================
+   2. JUDA KICHIK EKRANLAR (iPhone SE 1, eski Android: ≤359px)
+   ========================================================= */
+@media (max-width: 359px) {
+    .hero {
+        padding-top: 5.5rem;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .hero__inner { gap: 1.2rem; }
+    .hero__img-wrap { border-radius: 14px; }
+
+    .hero__title { font-size: 24px; margin-bottom: 1rem; }
+    .hero__desc { font-size: 14px; line-height: 1.65; }
+
+    .hero__socials { gap: 0.6rem; padding-left: 6px; }
+    .hero__social-btn { width: 46px; height: 46px; }
+    .hero__social-btn svg,
+    .hero__social-btn img,
+    .hero__social-btn i { width: 22px; height: 22px; font-size: 22px; }
+
+    .achievement__item { padding: 1.4rem 0.5rem; }
+    .achievement__number { font-size: 28px; }
+    .achievement__label { font-size: 8px; letter-spacing: 0.5px; }
+    .achievement__circle { width: 52px; height: 52px; }
+    .achievement__circle-text { font-size: 12px; }
+}
+
+
+/* =========================================================
+   3. iPHONE SE 2/3, mini, 8 (360–389px)
+   ========================================================= */
+@media (min-width: 360px) and (max-width: 389px) {
+    .hero__title { font-size: clamp(25px, 7.2vw, 30px); }
+    .hero__desc { font-size: 14.5px; }
+
+    .hero__socials { gap: 0.8rem; padding-left: 8px; }
+    .hero__social-btn { width: 50px; height: 50px; }
+    .hero__social-btn svg,
+    .hero__social-btn img,
+    .hero__social-btn i { width: 24px; height: 24px; font-size: 24px; }
+
+    .achievement__number { font-size: 32px; }
+    .achievement__circle { width: 58px; height: 58px; }
+}
+
+
+/* =========================================================
+   4. KATTA TELEFONLAR (iPhone 14/15 Pro Max, Plus, Android 412+: 414–743px)
+   ========================================================= */
+@media (min-width: 414px) and (max-width: 743px) {
+    .hero { padding-left: max(24px, env(safe-area-inset-left)); padding-right: max(24px, env(safe-area-inset-right)); }
+
+    .hero__title { font-size: clamp(32px, 7.5vw, 42px); }
+    .hero__desc { font-size: 16px; }
+
+    .hero__socials { gap: 1.1rem; padding-left: 14px; }
+    .hero__social-btn { width: 58px; height: 58px; }
+    .hero__social-btn svg,
+    .hero__social-btn img,
+    .hero__social-btn i { width: 28px; height: 28px; font-size: 28px; }
+
+    .achievement__item { padding: 2rem 1rem; }
+    .achievement__number { font-size: 40px; }
+    .achievement__label { font-size: 10px; letter-spacing: 1.2px; }
+    .achievement__circle { width: 72px; height: 72px; }
+    .achievement__circle-text { font-size: 15px; }
+}
+
+
+/* =========================================================
+   5. TELEFON GORIZONTAL (landscape)
+   ========================================================= */
+@media (max-height: 500px) and (orientation: landscape) and (max-width: 950px) {
+    .hero {
+        padding-top: 4.5rem;
+        padding-left: max(24px, env(safe-area-inset-left));
+        padding-right: max(24px, env(safe-area-inset-right));
+    }
+
+    .hero__inner {
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: 1.5rem;
+        align-items: center;
+    }
+
+    .hero__visual { order: 0; }
+
+    .hero__img-wrap {
+        aspect-ratio: 1 / 1;
+        max-height: 70vh;
+        width: 100%;
+        border-radius: 14px;
+    }
+
+    .hero__title { font-size: clamp(24px, 4vw, 32px); }
+    .hero__desc { font-size: 14px; margin-bottom: 1rem; }
+
+    .hero__socials { justify-content: flex-start; padding-left: 0; gap: 0.8rem; }
+    .hero__social-btn { width: 48px; height: 48px; }
+
+    .achievements__grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .achievement__item { padding: 1.2rem 0.5rem; }
+    .achievement__number { font-size: 28px; }
+}
+
+
+/* =========================================================
+   6. PLANSHET PORTRAIT (iPad mini 744, iPad 10.2" 810, Air 820, Pro 11" 834: 744–1024px)
+   ========================================================= */
+@media (min-width: 744px) and (max-width: 1024px) {
+
+    .hero {
+        padding-top: 7rem;
+        padding-bottom: 2.5rem;
+        padding-left: max(32px, env(safe-area-inset-left));
+        padding-right: max(32px, env(safe-area-inset-right));
+    }
+
+    .hero__inner {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 2.5rem;
+        align-items: center;
+    }
+
+    .hero__visual { order: 0; }
+
+    .hero__img-wrap {
+        aspect-ratio: 4 / 5;
+        max-height: 560px;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .hero__img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .hero__title {
+        font-size: clamp(34px, 4.6vw, 48px);
+        margin-bottom: 1.4rem;
+        overflow-wrap: anywhere;
+    }
+
+    .hero__desc {
+        font-size: 16px;
+        line-height: 1.75;
+        max-width: 100%;
+        margin-bottom: 1.8rem;
+    }
+
+    .hero__socials {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin-top: 1.25rem;
+        padding-left: 0;
+    }
+
+    .hero__social-btn { width: 56px; height: 56px; }
+    .hero__social-btn svg,
+    .hero__social-btn img,
+    .hero__social-btn i { width: 28px; height: 28px; font-size: 28px; }
+
+    .achievements__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0;
+    }
+
+    .achievement__item { padding: 2.2rem 1rem; }
+    .achievement__number { font-size: 42px; }
+    .achievement__label { font-size: 11px; letter-spacing: 1.5px; }
+    .achievement__circle { width: 80px; height: 80px; }
+    .achievement__circle svg { width: 100%; height: 100%; }
+    .achievement__circle-text { font-size: 16px; }
+
+    /* 5 ta element bo'lsa oxirgi qatorni to'g'rilash */
+    .achievement__item:last-child:nth-child(odd) { grid-column: auto; }
+    .achievement__item:nth-child(even)::after { display: block; }
+}
+
+
+/* =========================================================
+   7. iPAD PRO 11" / AIR GORIZONTAL (1025–1180px, touch)
+   ========================================================= */
+@media (min-width: 1025px) and (max-width: 1180px) and (hover: none) and (pointer: coarse) {
+    .hero {
+        padding-left: max(40px, env(safe-area-inset-left));
+        padding-right: max(40px, env(safe-area-inset-right));
+    }
+
+    .hero__inner { gap: 3rem; align-items: center; }
+    .hero__img-wrap { max-height: 600px; border-radius: 22px; }
+
+    .hero__title { font-size: clamp(40px, 4.2vw, 52px); }
+    .hero__desc { font-size: 17px; line-height: 1.75; }
+
+    .hero__socials { gap: 1.1rem; }
+    .hero__social-btn { width: 58px; height: 58px; }
+
+    .achievement__number { font-size: 46px; }
+    .achievement__label { font-size: 12px; letter-spacing: 1.8px; }
+    .achievement__circle { width: 88px; height: 88px; }
+    .achievement__circle-text { font-size: 18px; }
+}
+
+
+/* =========================================================
+   8. iPAD PRO 12.9" GORIZONTAL (1181–1366px, touch)
+   ========================================================= */
+@media (min-width: 1181px) and (max-width: 1366px) and (hover: none) and (pointer: coarse) {
+    .hero {
+        padding-left: max(56px, env(safe-area-inset-left));
+        padding-right: max(56px, env(safe-area-inset-right));
+    }
+
+    .hero__title { font-size: clamp(46px, 4vw, 58px); }
+    .hero__desc { font-size: 18px; }
+
+    .hero__social-btn { width: 60px; height: 60px; }
+
+    .achievement__number { font-size: 50px; }
+    .achievement__label { font-size: 13px; }
+    .achievement__circle { width: 96px; height: 96px; }
+}
+
+
+/* =========================================================
+   9. TOUCH QURILMALAR (hamma telefon va planshet)
+   ========================================================= */
+@media (hover: none) and (pointer: coarse) {
+    .hero__social-btn {
+        min-width: 44px;
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
